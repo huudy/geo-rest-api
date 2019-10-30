@@ -2,7 +2,7 @@
 
 This is a simple rest api with login and authentication allowing to fetch geographical information based on the ip provided and store it in the mongo db.
 
-The entire application is contained within the `app.rb` file.
+The entire application is splitted into two files `app.js` where the application initiation resides and `index.js` where the actual server is started up
 
 ### CREATE A CONFIG FOLDER WITH THREE FILES :<br />
 
@@ -15,18 +15,17 @@ content of three files:
   `JWT_SECRET=thisisasecretformyapp`<br />
   `IPSTACK_API_KEY=25a737eb693513942ca9a3e90fcb5b67`<br />
 
+- **test.env:**<br />
+  `PORT=3000`<br />
+  `MONGODB_URI=mongodb://127.0.0.1:27017/movie-rest-test`<br />
+  `JWT_SECRET=thisisasecretformyapp`<br />
+  `IPSTACK_API_KEY=25a737eb693513942ca9a3e90fcb5b67`<br />
 
-    - **test.env:**<br />
-        `PORT=3000`<br />
-        `MONGODB_URI=mongodb://127.0.0.1:27017/movie-rest-test`<br />
-        `JWT_SECRET=thisisasecretformyapp`<br />
-        `IPSTACK_API_KEY=25a737eb693513942ca9a3e90fcb5b67`<br />
-
-    - **dc.env:**<br />
-    `PORT=3000`<br />
-    `MONGODB_URI=mongodb://mongo:27017/movie-rest-test`<br />
-    `OMDB_API_KEY=*x*x*x*x`<br />
-    `IPSTACK_API_KEY=25a737eb693513942ca9a3e90fcb5b67`<br />
+- **dc.env:**<br />
+  `PORT=3000`<br />
+  `MONGODB_URI=mongodb://mongo:27017/movie-rest-test`<br />
+  `OMDB_API_KEY=*x*x*x*x`<br />
+  `IPSTACK_API_KEY=25a737eb693513942ca9a3e90fcb5b67`<br />
 
 You can get the IPSTACK_API_KEY from here => https://ipstack.com/
 
@@ -41,6 +40,18 @@ You can get the IPSTACK_API_KEY from here => https://ipstack.com/
 ## Run the tests
 
     npm run test
+
+## Run with docker
+
+    docker-compose up --build
+
+## Build docker image
+
+    docker build -t <TAG_NAME> .
+
+## Run docker image
+
+    docker run -p80:3000 <TAG_NAME>
 
 # REST API
 

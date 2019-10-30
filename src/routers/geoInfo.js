@@ -3,9 +3,11 @@ const GeoInfo = require('../models/geoInfo')
 const auth = require('../middleware/auth')
 const geo = require('../middleware/getGeoInfo')
 const router = new express.Router()
+var log = require('log4js').getLogger("geoInfos");
 
 router.post('/geoinfos', auth, geo, async (req, res) => {
 
+    log.debug('Getting geo infos')
     const geoInfo = new GeoInfo({
         ...req.geoInfo,
         user: req.user._id

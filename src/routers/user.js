@@ -2,10 +2,12 @@ const express = require('express')
 const User = require('../models/user')
 const auth = require('../middleware/auth')
 const router = new express.Router()
+var log = require('log4js').getLogger("users");
 
 router.post('/users', async (req, res) => {
     const user = new User(req.body)
 
+    log.debug('Creating new user')
     try {
         await user.save()
         await user.toJSON()
