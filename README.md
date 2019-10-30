@@ -4,9 +4,9 @@ This is a simple rest api with login and authentication allowing to fetch geogra
 
 The entire application is splitted into two files `app.js` where the application initiation resides and `index.js` where the actual server is started up
 
-### CREATE A CONFIG FOLDER WITH THREE FILES :<br />
+### ADD THREE CONFIG FILES :<br />
 
-![structure](https://user-images.githubusercontent.com/15052640/67496579-e4696200-f67c-11e9-8a4c-c4aba48bfb0c.png)<br />
+![config](https://user-images.githubusercontent.com/15052640/67874962-00b24680-fb36-11e9-8eb3-434a1ad5265f.png)<br />
 content of three files:
 
 - **dev.env:**<br />
