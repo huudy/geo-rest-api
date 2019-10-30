@@ -67,25 +67,25 @@ The REST API to the example app is described below.
 
 ### Response
 
-    HTTP/1.1 200 OK
+    HTTP/1.1 201 Created
     Date: Thu, 24 Feb 2011 12:36:30 GMT
-    Status: 200 OK
+    Status: 201 Created
     Connection: close
     Content-Type: application/json
     Content-Length: 2
 
-{
-"user": {
-"age": 2,
-"\_id": "5db95e2d24e8cf19011821d4",
-"name": "Test",
-"email": "test2332@test.pl",
-"createdAt": "2019-10-30T09:55:57.199Z",
-"updatedAt": "2019-10-30T09:55:57.218Z",
-"\_\_v": 1
-},
-"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGI5NWUyZDI0ZThjZjE5MDExODIxZDQiLCJpYXQiOjE1NzI0MjkzNTd9.7qtlAfnSLMKHHAC1W2RnCyftzABdIiLEPine5uk6Tik"
-}
+    {
+        "user": {
+        "age": 2,
+        "\_id": "5db95e2d24e8cf19011821d4",
+        "name": "Test",
+        "email": "test2332@test.pl",
+        "createdAt": "2019-10-30T09:55:57.199Z",
+        "updatedAt": "2019-10-30T09:55:57.218Z",
+        "\_\_v": 1
+        },
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGI5NWUyZDI0ZThjZjE5MDExODIxZDQiLCJpYXQiOjE1NzI0MjkzNTd9.7qtlAfnSLMKHHAC1W2RnCyftzABdIiLEPine5uk6Tik"
+    }
 
 ## Create a user with the same email address
 
@@ -104,13 +104,13 @@ The REST API to the example app is described below.
     Content-Type: application/json
     Content-Length: 2
 
-{
-"driver": true,
-"name": "MongoError",
-"index": 0,
-"code": 11000,
-"errmsg": "E11000 duplicate key error collection: geo-api.users index: email_1 dup key: { : \"adam@email.com\" }"
-}
+    {
+        "driver": true,
+        "name": "MongoError",
+        "index": 0,
+        "code": 11000,
+        "errmsg": "E11000 duplicate key error collection: geo-api.users index: email_1 dup key: { : \"adam@email.com\" }"
+    }
 
 ## Login user
 
@@ -432,3 +432,7 @@ The REST API to the example app is described below.
 "updatedAt": "2019-10-30T10:56:33.425Z",
 "\_\_v": 0
 }
+
+## Live example
+
+    https://vast-cove-25609.herokuapp.com/
