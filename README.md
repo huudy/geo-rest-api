@@ -97,9 +97,9 @@ The REST API to the example app is described below.
 
 ### Response
 
-    HTTP/1.1 200 OK
+    HTTP/1.1 400 Bad Request
     Date: Thu, 24 Feb 2011 12:36:30 GMT
-    Status: 200 OK
+    Status: 400 Bad Request
     Connection: close
     Content-Type: application/json
     Content-Length: 2
@@ -246,9 +246,9 @@ The REST API to the example app is described below.
 
 ### Response
 
-    HTTP/1.1 404 Not Found
+    HTTP/1.1 200 OK
     Date: Thu, 24 Feb 2011 12:36:30 GMT
-    Status: 404 Not Found
+    Status: 200 OK
     Connection: close
     Content-Type: application/json
     Content-Length: 35
@@ -397,41 +397,41 @@ The REST API to the example app is described below.
     Status: 200 OK
     Connection: close
 
-{
-"location": {
-"geoname_id": 4887398,
-"capital": "Washington D.C.",
-"languages": [
-{
-"_id": "5db96c61c75d8314ae7645aa",
-"code": "en",
-"name": "English",
-"native": "English"
-}
-],
-"country_flag": "http://assets.ipstack.com/flags/us.svg",
-"country_flag_emoji": "🇺🇸",
-"country_flag_emoji_unicode": "U+1F1FA U+1F1F8",
-"calling_code": "1",
-"is_eu": false
-},
-"\_id": "5db96c61c75d8314ae7645a9",
-"ip": "172.32.23.211",
-"type": "ipv4",
-"continent_code": "NA",
-"continent_name": "North America",
-"country_name": "United States",
-"region_code": "IL",
-"region_name": "Illinois",
-"city": "Chicago",
-"zip": "60608",
-"latitude": 41.84885025024414,
-"longitude": -87.67124938964844,
-"user": "5db95e2d24e8cf19011821d4",
-"createdAt": "2019-10-30T10:56:33.425Z",
-"updatedAt": "2019-10-30T10:56:33.425Z",
-"\_\_v": 0
-}
+    {
+      "location": {
+      "geoname_id": 4887398,
+      "capital": "Washington D.C.",
+      "languages": [
+      {
+      "_id": "5db96c61c75d8314ae7645aa",
+      "code": "en",
+      "name": "English",
+      "native": "English"
+      }
+      ],
+      "country_flag": "http://assets.ipstack.com/flags/us.svg",
+      "country_flag_emoji": "🇺🇸",
+      "country_flag_emoji_unicode": "U+1F1FA U+1F1F8",
+      "calling_code": "1",
+      "is_eu": false
+      },
+      "\_id": "5db96c61c75d8314ae7645a9",
+      "ip": "172.32.23.211",
+      "type": "ipv4",
+      "continent_code": "NA",
+      "continent_name": "North America",
+      "country_name": "United States",
+      "region_code": "IL",
+      "region_name": "Illinois",
+      "city": "Chicago",
+      "zip": "60608",
+      "latitude": 41.84885025024414,
+      "longitude": -87.67124938964844,
+      "user": "5db95e2d24e8cf19011821d4",
+      "createdAt": "2019-10-30T10:56:33.425Z",
+      "updatedAt": "2019-10-30T10:56:33.425Z",
+      "\_\_v": 0
+    }
 
 ## Live example
 
