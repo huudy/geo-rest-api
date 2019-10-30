@@ -4,13 +4,11 @@ const auth = require('../middleware/auth')
 const router = new express.Router()
 
 router.post('/users', async (req, res) => {
-    console.log(req.body);
     const user = new User(req.body)
-    console.log(user);
-
 
     try {
         await user.save()
+        await user.toJSON()
         const token = await user.generateAuthToken()
         res.status(201).send({
             user,
@@ -41,7 +39,9 @@ router.post('/users/logout', auth, async (req, res) => {
         })
         await req.user.save()
 
-        res.send()
+        res.send({
+            message: `User ${req.user.name} successfully logged out!`
+        })
     } catch (e) {
         res.status(500).send()
     }

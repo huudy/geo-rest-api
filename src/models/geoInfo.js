@@ -82,6 +82,17 @@ const geoInfoSchema = new mongoose.Schema({
     timestamps: true
 })
 
+geoInfoSchema.methods.toJSON = function () {
+    const geoInfo = this
+    const geoInfoObj = geoInfo.toObject()
+
+    delete geoInfoObj.location.languages._id
+    delete geoInfoObj.tokens
+    delete geoInfoObj.avatar
+
+    return geoInfoObj
+}
+
 const GeoInfo = mongoose.model('GeoInfo', geoInfoSchema)
 
 module.exports = GeoInfo

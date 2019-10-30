@@ -5,13 +5,11 @@ const geo = require('../middleware/getGeoInfo')
 const router = new express.Router()
 
 router.post('/geoinfos', auth, geo, async (req, res) => {
-    console.log(req.geoInfo);
 
     const geoInfo = new GeoInfo({
         ...req.geoInfo,
         user: req.user._id
     })
-    console.log(geoInfo);
 
     try {
         await geoInfo.save()
@@ -39,11 +37,13 @@ router.get('/geoinfos/:id', auth, async (req, res) => {
     try {
         const geoInfo = await GeoInfo.findOne({
             _id,
-            owner: req.user._id
+            user: req.user._id
         })
 
         if (!geoInfo) {
-            return res.status(404).send()
+            return res.status(404).send({
+                message: `Entry with id: ${_id} for user could not be found`
+            })
         }
 
         res.send(geoInfo)
@@ -56,7 +56,7 @@ router.delete('/geoinfos/:id', auth, async (req, res) => {
     try {
         const geoinfo = await GeoInfo.findOneAndDelete({
             _id: req.params.id,
-            owner: req.user._id
+            user: req.user._id
         })
 
         if (!geoinfo) {

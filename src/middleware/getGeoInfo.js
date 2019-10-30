@@ -11,12 +11,6 @@ const getGeoInfo = async (req, res, next) => {
         if (!response) {
             throw new Error()
         }
-
-        let geoInfo = new GeoInfo(response.data)
-        console.log(geoInfo.location.languages);
-
-
-
         req.geoInfo = response.data
         next()
     } catch (e) {
